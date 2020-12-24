@@ -10,9 +10,11 @@ if (sumPerDroid === null) {
 else if (true) {
     sumPerDroid = Number(sumPerDroid);
     totalPrice = sumPerDroid * pricePerDroid;
-    let payment = totalPrice > credits ?
+    let payment =
+        totalPrice > credits ?
         console.log('Недостаточно средств на счету')
-        : console.log(`Вы купили ${sumPerDroid} дроидов, на счету осталось ${credits - totalPrice} кредитов`);
+            :
+            console.log(`Вы купили ${sumPerDroid} дроидов, на счету осталось ${credits - totalPrice} кредитов`);
 } 
 
 
