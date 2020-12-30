@@ -42,7 +42,8 @@ function calculateTotal(number) {
   // Пиши код ниже этой строки
     let newNumber = 0;
     for (let i = 0; i <= number; i += 1){
-        newNumber = i * 10 / 2;
+        
+        newNumber += i;
         
       
         
@@ -54,11 +55,11 @@ function calculateTotal(number) {
 
 //   // Пиши код выше этой строки
 // }
-    // console.log(calculateTotal(3));
+    console.log(calculateTotal(3));
     console.log(calculateTotal(7));
-    // console.log(calculateTotal(18));
-    // console.log(calculateTotal(24));
-    // console.log(calculateTotal());
+    console.log(calculateTotal(18));
+    console.log(calculateTotal(24));
+    console.log(calculateTotal());
 // calculateTotal(1) возвращает 1.
 // Вызов функции calculateTotal(3) возвращает 6.
 // Вызов функции calculateTotal(7) возвращает 28.
