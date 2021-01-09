@@ -131,18 +131,78 @@
  
  
  
- function makeTask(data) {
-  const completed = false;
-  const category = 'Общее';
-  const priority = 'Обычный';
+//  function makeTask(data) {
+//   const completed = false;
+//   const category = 'Общее';
+//   const priority = 'Обычный';
  
-}
-console.log(makeTask({}));
-console.log(makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор' })  );
-console.log(makeTask({ category: 'Финансы', text: 'Забрать проценты' }) );
-console.log(makeTask({ priority: 'Низкий', text: 'Выбрать шампунь' }) );
-console.log(makeTask({ text: 'Купить хлеб' }) );
+// }
+// console.log(makeTask({}));
+// console.log(makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор' })  );
+// console.log(makeTask({ category: 'Финансы', text: 'Забрать проценты' }) );
+// console.log(makeTask({ priority: 'Низкий', text: 'Выбрать шампунь' }) );
+// console.log(makeTask({ text: 'Купить хлеб' }) );
 
+ 
+// function addOverNum(a,...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+    
+//       if (a < arg) {
+//           total += arg;
+//       }
+//   }
+
+//   return total;
+ 
+// }
+ 
+// console.log(addOverNum(50, 15, 27));
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+// console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
+
+
+// function findMatches(firstArg,...args) {
+//   const matches = []; // Не изменяй эту строку
+
+//     for (const arg of args) {
+        
+//         for (const first of firstArg) {
+            
+//             if (arg === first) {
+//                 matches.push(arg);
+                
+//             }
+//         }
+//     }
+  
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+// console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+// console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
+
+const bookShelf = {
+  books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+  updateBook(oldName, newName) {
+      
+      
+      const position = this.books.indexOf(oldName);
+      return this.books.splice(position, 1,newName);
+      
+      
+      
+  },
+};
+console.log(bookShelf.updateBook('Мгла', 'Хроники подземелий'));
+console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));
+//  значение свойства books это массив['Последнее королевство', 'Хроники подземелий', 'Страж снов'].
+
+//   значение свойства books это массив ['Дюна', 'Мгла', 'Страж снов']
  
  
 
