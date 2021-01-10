@@ -186,25 +186,80 @@
 // console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
 // console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
 
-const bookShelf = {
-  books: ['Последнее королевство', 'Мгла', 'Страж снов'],
-  updateBook(oldName, newName) {
+// const bookShelf = {
+//   books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+//   updateBook(oldName, newName) {
       
       
-      const position = this.books.indexOf(oldName);
-      return this.books.splice(position, 1,newName);
+//       const position = this.books.indexOf(oldName);
+//       return this.books.splice(position, 1,newName);
       
       
       
-  },
-};
-console.log(bookShelf.updateBook('Мгла', 'Хроники подземелий'));
-console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));
+//   },
+// };
+// console.log(bookShelf.updateBook('Мгла', 'Хроники подземелий'));
+// console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));
 //  значение свойства books это массив['Последнее королевство', 'Хроники подземелий', 'Страж снов'].
 
 //   значение свойства books это массив ['Дюна', 'Мгла', 'Страж снов']
- 
- 
+const atTheOldToad = {
+  potions: [
+    { name: 'Зелье скорости', price: 460 },
+    { name: 'Дыхание дракона', price: 780 },
+    { name: 'Каменная кожа', price: 520 },
+  ],
+  // Пиши код ниже этой строки
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Зелье ${potionName} уже есть в инвентаре!`;
+    }
 
+    this.potions.push(potionName);
+  },
+//     removePotion(potionName) {
+//         for (const key of Object.keys(this.potions)){
+//             const potions = this.potions[key];
+            
+//             if (potionName === potions.name) {
+               
+//                 console.log(key);
+//                 return this.potions.splice(key, 1);
+//             }
+//             // if (potionIndex === potionName) {
+//             //  return `Зелья ${potionName} нет в инвентаре!`;   
+//             // }return this.potions.splice(potionIndex, 1);
+//         }
+    
+
+     
+//   },
+    updatePotionName(oldName, newName) {
+       for (const key of Object.keys(this.potions)){
+           const potions = this.potions[key];
+       
+           if (oldName === potions.name) {
+               return this.potions[key].name = newName;
+       }
+       
+       }
+    
+  },
+  // Пиши код выше этой строки
+};
+
+
+  console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion('Невидимка'));
+// console.log(atTheOldToad.removePotion('Дыхание дракона'));
+// console.log(updatePotionName(oldName, newName));
+
+//   console.log(atTheOldToad.getPotions());
+console.log(atTheOldToad.updatePotionName('Дыхание дракона', 'Полиморф'));
+
+console.log(atTheOldToad.getPotions());
  
  
