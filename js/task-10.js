@@ -62,31 +62,83 @@
 // processCall('Поли', takeCall, leaveHoloMessage);
 
 
-const orders = [
-  { email: 'solomon@topmail.ua', dish: 'Burger' },
-  { email: 'artemis@coldmail.net', dish: 'Pizza' },
-  { email: 'jacob@mail.com', dish: 'Taco' },
-];
+
+// function position() {
+//   for(let i = 0; i < orders.length; i += 1){
+//    console.log(i);
+//   }
+// }
 
 
-
-function composeMessage(position) {
-  function neaMessage() {
-    for (let i = 0; i < orders.length; i += 1) { 
-      position = i + 1;
-      return `Готовим ${this[i].dish} для ${this[i].email}. Ваш заказ ${position}-й в очереди.`;
-
-    }
-  }
-
-  
-}
 
  
 
 
-//   for()
-   
+
+//  return `Готовим ${this[i].dish} для ${this[i].email}. Ваш заказ ${position}-й в очереди.`;
+  
+ 
+
+// }
+  
+
+
+
+
+// ;
+// const messages = orders.map(() => composeMessage.call(orders));
+// console.log(messages);
+
+
+
+//  let message;
+//   for (let i = 0; i < this.length; i += 1){
+//     position = i + 1;
+//    message = `Готовим ${this[i].dish} для ${this[i].email}. Ваш заказ ${position}-й в очереди.`;
+//     console.log(message);
+
+//   } 
+
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+  
+// ];
+
+// // newApp()
+
+// function composeMessage(position) {
+ 
+//    return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+//  }
+
+  
+// //   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// // }
+
+
+//  composeMessage.call(orders);
+
+
+//   const messages = orders.map(() => composeMessage.call(orders));
+// console.log(messages);
+
+
+
+
+//     for (let i = 0; i < orders.length; i += 1) { 
+//       position = i + 1;
+//       return `Готовим ${this[i].dish} для ${this[i].email}. Ваш заказ ${position}-й в очереди.`;
+
+//     }
+  
+
+  
+// }
+
+ 
   
 //     `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
 
@@ -97,8 +149,10 @@ function composeMessage(position) {
 
 
 // }
-
- composeMessage.call(orders);
+// console.log(composeMessage.call(orders));
+// const messages = orders.map(composeMessage());
+// console.log(messages);
+ 
 
 // let messages = [];
 // const sweetArray = [2, 3, 4, 5, 35]
@@ -119,7 +173,72 @@ function composeMessage(position) {
 // console.log(sweeterArray);
 
 
- 
+// const createCounter = function() {
+//   /*
+//    * Локальная переменная privateValue доступна только в замыкании.
+//    * Получить к ней доступ во внешнем коде невозможно.
+//    */
+//   let privateValue = 0;
+
+//   const increment = function() {
+//     privateValue += 1;
+//     console.log(privateValue);
+//   };
+
+//   return {
+//     increment,
+//   };
+// };
+
+// const counterA = createCounter();
+// counterA.increment(); // 1
+// counterA.increment(); // 2
+
+// const counterB = createCounter();
+// counterB.increment(); // 1
+// counterB.increment(); // 2
+// counterB.increment(); // 3
+
+
+// const makeShef = function(name) {
+//   /*
+//    * Параметр name это локальная переменная для функции makeShef.
+//    * Это значит что она будет доступна функции makeDish через замыкание.
+//    */
+//   return function makeDish(dish) {
+//     console.log(`${name} is cooking ${dish}`);
+//   };
+// };
+
+// const mango = makeShef('Mango');
+// mango('apple pie'); // Mango is cooking apple pie
+// mango('beef stew'); // Mango is cooking beef stew
+
+// const poly = makeShef('Poly');
+// poly('pancakes'); // Poly is cooking pancakes
+// poly('eggs and bacon'); // Poly is cooking eggs and bacon
+
+
+const orders = [
+  { email: 'solomon@topmail.ua', dish: 'Burger' },
+  { email: 'artemis@coldmail.net', dish: 'Pizza' },
+  { email: 'jacob@mail.com', dish: 'Taco' },
+];
+
+// Пиши код ниже этой строки
+
+function composeMessage(position) {
+
+ return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+
+}
+
+
+
+  
+ const messages = orders.map((currenValue, index, arr)  => {return composeMessage.call(orders[index],index + 1)  });
+
+  console.log(messages);
 
 
 
