@@ -238,9 +238,10 @@ const atTheOldToad = {
      
 //   },
     updatePotionName(oldName, newName) {
-       for (const key of Object.keys(this.potions)){
+      for (const key of Object.keys(this.potions)) {
+         
            const potions = this.potions[key];
-       
+       console.log(potions);
            if (oldName === potions.name) {
                return this.potions[key].name = newName;
        }
